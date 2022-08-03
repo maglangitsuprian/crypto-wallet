@@ -47,9 +47,26 @@
             <div class="col text-muted">COIN PRICE</div>
           </div>
 
-          <div id="cryptoList"></div>
+          <div id="cryptoList">
+            <div id="bitcoin">
+              <div class="row">
+                 <div class="col text-center">
+                   <img src="img/bitcoin.png" alt="bitcoin" class="img-fluid">
+                 </div>
+                 <div class="col"></div>
+                 <div class="col"></div>
+               </div>
+     
+     
+             <div class="row mb-2">
+                 <div class="col text-center">Bitcoin</div>
+                 <div class="col text text-muted"></div>
+                 <div class="col text text-muted"></div>
+             </div>
+         </div>
+          </div>
 
-          <div class="row text-center mb-2 transaction">
+          <!-- <div class="row text-center mb-2 transaction">
             <p>Transaction History</p>
             <table id="transactions">
               <thead>
@@ -62,7 +79,7 @@
               </thead>
               <tbody></tbody>
             </table>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="row mb-2 justify-content-center">
@@ -74,7 +91,7 @@
             id="amount"
           />
 
-          <select id="cryptoMarket"></select>
+          <!-- <select id="cryptoMarket"></select> -->
         </div>
       </div>
       <div class="row text-center">
@@ -82,14 +99,14 @@
           <div class="btn-group" role="group" aria-label="Basic example">
             <button
               type="button"
-              class="btn btn-success action-buy"
+              class="btn btn-success"
               data-action="buy"
             >
               BUY
             </button>
             <button
               type="button"
-              class="btn btn-danger action-sell"
+              class="btn btn-danger"
               data-action="sell"
             >
               SELL
