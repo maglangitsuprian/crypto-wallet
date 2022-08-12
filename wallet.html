@@ -40,7 +40,9 @@
         </div>
         <div class="row">
           <div class="col-3 deposit-button">
-            <button type="button" class="btn btn-warning btn-sm">Deposit</button>
+            <button type="button" class="btn btn-warning btn-sm">
+              Deposit
+            </button>
           </div>
           <div class="col-3 withdraw-button">
             <button type="button" class="btn btn-info btn-sm">Withdraw</button>
@@ -58,20 +60,46 @@
           <div id="cryptoList">
             <div id="bitcoin">
               <div class="row">
-                 <div class="col text-center">
-                   <img src="img/bitcoin.png" alt="bitcoin" class="img-fluid">
-                 </div>
-                 <div class="col"></div>
-                 <div class="col"></div>
-               </div>
-     
-     
-             <div class="row mb-2">
-                 <div class="col text-center">Bitcoin</div>
-                 <div class="col text text-muted"></div>
-                 <div class="col text text-muted"></div>
-             </div>
-         </div>
+                <div class="col text-center">
+                  <img src="img/bitcoin.png" alt="bitcoin" class="img-fluid" />
+                </div>
+                <div class="col"></div>
+                <div class="col"></div>
+              </div>
+              <div class="row mb-2">
+                <div class="col text-center">Bitcoin</div>
+                <div class="col text text-muted"></div>
+                <div class="col text text-muted"></div>
+              </div>
+            </div>
+            <div id="bitcoin">
+              <div class="row">
+                <div class="col text-center">
+                  <img src="img/ethereum.png" alt="bitcoin" class="img-fluid" />
+                </div>
+                <div class="col"></div>
+                <div class="col"></div>
+              </div>
+              <div class="row mb-2">
+                <div class="col text-center">Ethereum</div>
+                <div class="col text text-muted"></div>
+                <div class="col text text-muted"></div>
+              </div>
+            </div>
+            <div id="bitcoin">
+              <div class="row">
+                <div class="col text-center">
+                  <img src="img/tether.png" alt="bitcoin" class="img-fluid" />
+                </div>
+                <div class="col"></div>
+                <div class="col"></div>
+              </div>
+              <div class="row mb-2">
+                <div class="col text-center">Tether</div>
+                <div class="col text text-muted"></div>
+                <div class="col text text-muted"></div>
+              </div>
+            </div>
           </div>
 
           <!-- <div class="row text-center mb-2 transaction">
@@ -102,21 +130,24 @@
           <!-- <select id="cryptoMarket"></select> -->
         </div>
       </div>
+      <div class="row justify-content-center mb-2">
+        <div class="col-5">
+          <select
+            class="form-select form-select-sm"
+            aria-label=".form-select-sm example"
+          >
+            <option selected>Coin List</option>
+            <option value="bitcoin">Bitcoin</option>
+            <option value="ethereum">Ethereum</option>
+            <option value="tether">Tether</option>
+          </select>
+        </div>
+      </div>
       <div class="row text-center">
         <div class="col">
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button
-              type="button"
-              class="btn btn-success"
-            >
-              BUY
-            </button>
-            <button
-              type="button"
-              class="btn btn-danger"
-            >
-              SELL
-            </button>
+            <button type="button" class="btn btn-success">BUY</button>
+            <button type="button" class="btn btn-danger">SELL</button>
           </div>
         </div>
       </div>
