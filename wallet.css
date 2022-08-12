@@ -12,6 +12,7 @@
 .img-fluid{
     height: 25px !important;
     width: 25px !important;
+    
 }
 .text {
     text-align: right;
@@ -45,6 +46,7 @@ img{
 body{
     background-color: black;
     background: url(img/bg-wallpaper.jpg) no-repeat center fixed;
-    
-
+}
+.withdraw-button {
+    margin-left: -15px;
 }
