@@ -47,6 +47,10 @@ body{
     background-color: black;
     background: url(img/bg-wallpaper.jpg) no-repeat center fixed;
 }
-.withdraw-button {
+.withdraw-button{
     margin-left: -15px;
+}
+
+.transaction-history {
+    margin-left: -5px;
 }
