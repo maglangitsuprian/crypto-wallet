@@ -72,7 +72,30 @@
             </div>
           </div>
           <div class="col-3 withdraw-button">
-            <button type="button" class="btn btn-info btn-sm">Withdraw</button>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+              Withdraw
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Withdraw (USDT)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="input-group mb-1  ">
+                      <input type="text" class="form-control" placeholder="Enter amount of USDT" aria-label="Enter amount of USDT" aria-describedby="Enter amount of USDT">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-info">Withdraw</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="col-3 transaction-history">
             <button type="button" class="btn btn-dark btn-sm">
