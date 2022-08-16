@@ -15,6 +15,7 @@ let totalBalance = $(".total-balance")
 const main = ()=> {
     cryptoPrices()
     deposit()
+    withdraw()
 }
 
 
@@ -46,6 +47,15 @@ const cryptoPrices = ()=>{
 const deposit = () => {
     $(".deposit-crypto").on("click", ()=>{
      currentBalance = currentBalance +  parseInt($(".deposit-amount").val())
+     totalBalance.html(`$${currentBalance}`)
+    })
+    
+}
+
+
+const withdraw = () => {
+    $(".withdraw-crypto").on("click", ()=>{
+     currentBalance = currentBalance -  parseInt($(".withdraw-amount").val())
      totalBalance.html(`$${currentBalance}`)
     })
     
