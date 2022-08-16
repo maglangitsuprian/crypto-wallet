@@ -249,12 +249,12 @@
                 <div class="col text-center">
                   <img src="img/bitcoin.png" alt="bitcoin" class="img-fluid" />
                 </div>
-                <div class="col bitcoin-balance text-end"></div>
+                <div class="col bitcoin-quantity text-end">0 BTC</div>
                 <div class="col text-end bitcoin-change"></div>
               </div>
               <div class="row mb-2">
                 <div class="col text-center">Bitcoin</div>
-                <div class="col text text-muted text-end"></div>
+                <div class="col text text-muted text-end bitcoin-value">$0</div>
                 <div class="col text text-muted text-end bitcoin-price"></div>
               </div>
             </div>
@@ -263,13 +263,13 @@
                 <div class="col text-center">
                   <img src="img/ethereum.png" alt="bitcoin" class="img-fluid" />
                 </div>
-                <div class="col text-end"></div>
+                <div class="col text-end ethereum-quantity">0 ETH</div>
                 <div class="col text-end ethereum-change"></div>
               </div>
               <div class="row mb-2">
                 <div class="col text-center">Ethereum</div>
-                <div class="col text text-muted text-end"></div>
-                <div class="col text text-muted text-end  ethereum-price"></div>
+                <div class="col text text-muted text-end ethereum-value">$0</div>
+                <div class="col text text-muted text-end ethereum-price"></div>
               </div>
             </div>
             <div id="bitcoin">
@@ -277,13 +277,13 @@
                 <div class="col text-center">
                   <img src="img/tether.png" alt="bitcoin" class="img-fluid" />
                 </div>
-                <div class="col text-end"></div>
+                <div class="col text-end tether-quantity">0 USDT</div>
                 <div class="col text-end tether-change"></div>
               </div>
               <div class="row mb-2">
                 <div class="col text-center">Tether</div>
-                <div class="col text text-muted text-end"></div>
-                <div class="col text text-muted text-end  tether-price"></div>
+                <div class="col text text-muted text-end tether-value">$0</div>
+                <div class="col text text-muted text-end tether-price"></div>
               </div>
             </div>
           </div>
@@ -325,15 +325,14 @@
             <option selected>Coin List</option>
             <option value="bitcoin">Bitcoin</option>
             <option value="ethereum">Ethereum</option>
-            <option value="tether">Tether</option>
           </select>
         </div>
       </div>
       <div class="row text-center">
         <div class="col">
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-success">BUY</button>
-            <button type="button" class="btn btn-danger">SELL</button>
+            <button type="button" class="btn btn-success buy-button">BUY</button>
+            <button type="button" class="btn btn-danger sell-button">SELL</button>
           </div>
         </div>
       </div>
