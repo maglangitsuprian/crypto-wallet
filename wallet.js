@@ -26,8 +26,8 @@ const main = ()=> {
     
     deposit()
     withdraw()
-    buy()
     sell()
+    buy()
     cryptoPrices()
 }
 
@@ -74,7 +74,6 @@ const withdraw = () => {
         } else {
             alert("Not enough balance!")
         }
-        
      $(".withdraw-amount").val("")
     })
 }
@@ -110,7 +109,7 @@ const sell = ()=> {
     $(".sell-button").on("click", ()=>{
      let value = parseInt($("#amount").val())
      let selectedCoin = $("select").val()
-    if((currentBalance>=value) && (tetherQuantityNum<=value)){
+    if((parseInt(bitcoinValue.html().slice(1))>=value) || (parseInt(ethereumValue.html().slice(1))>=value)){
         if(selectedCoin === "bitcoin"){
             bitcoinQuantityNum = (bitcoinQuantityNum - (value / bitcoin.html().slice(1))) 
             bitcoinQuantity.html(`${bitcoinQuantityNum.toFixed(5)} BTC`)
