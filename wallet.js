@@ -6,6 +6,18 @@ let tether = $(".tether-price")
 let btcChange = $(".bitcoin-change")
 let ethChange = $(".ethereum-change")
 let usdtChange = $(".tether-change")
+
+let currentBalance = 0
+let totalBalance = $(".total-balance")
+
+
+
+const main = ()=> {
+    cryptoPrices()
+    deposit()
+}
+
+
 const cryptoPrices = ()=>{
         setInterval(async()=>{
             let response = await axios.get("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ctether&vs_currencies=usd&include_24hr_change=true")
@@ -29,4 +41,15 @@ const cryptoPrices = ()=>{
         
 
 }
-cryptoPrices()
+
+
+const deposit = () => {
+    $(".deposit-crypto").on("click", ()=>{
+     currentBalance = currentBalance +  parseInt($(".deposit-amount").val())
+     totalBalance.html(`$${currentBalance}`)
+    })
+    
+}
+
+
+main()
