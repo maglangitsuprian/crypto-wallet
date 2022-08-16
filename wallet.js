@@ -60,6 +60,7 @@ const deposit = () => {
     $(".deposit-crypto").on("click", ()=>{
     tetherQuantityNum = tetherQuantityNum + parseInt($(".deposit-amount").val()) 
     tetherQuantity.html(`${tetherQuantityNum} USDT`)
+    $(".deposit-amount").val("")
     })
     
 }
@@ -67,7 +68,14 @@ const deposit = () => {
 
 const withdraw = () => {
     $(".withdraw-crypto").on("click", ()=>{
-     currentBalance = currentBalance -  parseInt($(".withdraw-amount").val())
+        if(tetherQuantityNum>=parseInt($(".withdraw-amount").val())){
+          tetherQuantityNum = tetherQuantityNum - parseInt($(".withdraw-amount").val()) 
+          tetherQuantity.html(`${tetherQuantityNum} USDT`)  
+        } else {
+            alert("Not enough balance!")
+        }
+        
+     $(".withdraw-amount").val("")
     })
 }
 
@@ -94,7 +102,7 @@ const buy = ()=> {
         }
      } else {
         alert("Sorry, Not enough balance! Please deposit USDT.")
-     }})
+     } $("#amount").val("")})
 }
 
 
@@ -117,7 +125,7 @@ const sell = ()=> {
     } else {
         alert("Not enough balance!")
     }
-    })
+    $("#amount").val("")})
 }
 
 
