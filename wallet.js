@@ -27,6 +27,7 @@ const main = ()=> {
     deposit()
     withdraw()
     buy()
+    sell()
     cryptoPrices()
 }
 
@@ -97,16 +98,27 @@ const buy = ()=> {
 }
 
 
-// const sell = ()=> {
-//     $(".sell-button").on("click", ()=>{
-//      let value = parseInt($("#amount").val())
-//      let selectedCoin = $("select").val()
-    
-//     if(selectedCoin === "bitcoin"){
-//         bitcoinQuantityNum
-//     } 
-//     })
-// }
+const sell = ()=> {
+    $(".sell-button").on("click", ()=>{
+     let value = parseInt($("#amount").val())
+     let selectedCoin = $("select").val()
+    if((currentBalance>=value) && (tetherQuantityNum<=value)){
+        if(selectedCoin === "bitcoin"){
+            bitcoinQuantityNum = (bitcoinQuantityNum - (value / bitcoin.html().slice(1))) 
+            bitcoinQuantity.html(`${bitcoinQuantityNum.toFixed(5)} BTC`)
+            tetherQuantityNum = tetherQuantityNum + value
+            tetherQuantity.html(`${tetherQuantityNum} USDT`)
+        } else if (selectedCoin === "ethereum"){
+            ethereumQuantityNum = (ethereumQuantityNum - (value / ethereum.html().slice(1))) 
+            ethereumQuantity.html(`${ethereumQuantityNum.toFixed(5)} ETH`) 
+            tetherQuantityNum = tetherQuantityNum + value
+            tetherQuantity.html(`${tetherQuantityNum} USDT`)
+        } 
+    } else {
+        alert("Not enough balance!")
+    }
+    })
+}
 
 
 const cryptoValue = ()=>{
