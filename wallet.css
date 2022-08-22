@@ -54,8 +54,13 @@ body{
 .transaction-history {
     margin-left: -4px;
 }
-/* .crypto-tab{
+.crypto-tab{
     border-radius:20px;
     border: none;
     box-shadow: 1px 1px 1px 1px;
-} */
+    cursor: pointer;
+}
+.crypto-chart {
+    height: 17rem;
+    width: 32rem;
+}

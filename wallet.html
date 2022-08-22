@@ -49,7 +49,7 @@
             <!-- Button trigger modal -->
             <button
               type="button"
-              class="btn btn-warning btn-sm" 
+              class="btn btn-warning btn-sm"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
             >
@@ -95,7 +95,12 @@
                     >
                       Close
                     </button>
-                    <button type="button" class="btn btn-warning deposit-crypto transaction-button" data-bs-dismiss="modal" value="deposit">
+                    <button
+                      type="button"
+                      class="btn btn-warning deposit-crypto"
+                      data-bs-dismiss="modal"
+                      value="deposit"
+                    >
                       Deposit
                     </button>
                   </div>
@@ -153,7 +158,14 @@
                     >
                       Close
                     </button>
-                    <button type="button" class="btn btn-info withdraw-crypto transaction-button" data-bs-dismiss="modal" value="withdraw">Withdraw</button>
+                    <button
+                      type="button"
+                      class="btn btn-info withdraw-crypto"
+                      data-bs-dismiss="modal"
+                      value="withdraw"
+                    >
+                      Withdraw
+                    </button>
                   </div>
                 </div>
               </div>
@@ -199,7 +211,6 @@
                           <th scope="col">Cost</th>
                           <th scope="col">Quantity</th>
                           <th scope="col">Price</th>
-                          
                         </tr>
                       </thead>
                       <tbody class="transaction-body">
@@ -228,50 +239,117 @@
             <div class="col text-muted">COIN PRICE</div>
           </div>
 
-          
-            <div class="crypto-tab py-1 px-1">
-              <div class="row">
-                <div class="col text-center">
-                  <img src="img/bitcoin.png" alt="bitcoin" class="img-fluid" />
-                </div>
-                <div class="col bitcoin-quantity text-end">0 BTC</div>
-                <div class="col text-end bitcoin-change"></div>
+          <div
+            class="crypto-tab mb-2 py-2 px-3"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal3"
+          >
+            <div class="row">
+              <div class="col text-center">
+                <img src="img/bitcoin.png" alt="bitcoin" class="img-fluid" />
               </div>
-              <div class="row mb-2">
-                <div class="col text-center">Bitcoin</div>
-                <div class="col text text-muted text-end bitcoin-value">$0</div>
-                <div class="col text text-muted text-end bitcoin-price"></div>
+              <div class="col bitcoin-quantity text-end">0 BTC</div>
+              <div class="col text-end bitcoin-change"></div>
+            </div>
+            <div class="row">
+              <div class="col text-center">Bitcoin</div>
+              <div class="col text text-muted text-end bitcoin-value">$0</div>
+              <div class="col text text-muted text-end bitcoin-price"></div>
+            </div>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal3"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog  modal-dialog-centered">
+                <div class="modal-content">
+                  
+                  <div class="modal-body">
+                    Bitcoin Chart
+                    <img src="img/bitcoin-chart.png" alt="bitcoin chart" class="crypto-chart" >
+                  </div>
+                </div>
               </div>
             </div>
-            <div  class="crypto-tab py-1 px-1">
-              <div class="row">
-                <div class="col text-center">
-                  <img src="img/ethereum.png" alt="bitcoin" class="img-fluid" />
-                </div>
-                <div class="col text-end ethereum-quantity">0 ETH</div>
-                <div class="col text-end ethereum-change"></div>
+          </div>
+          <div
+            class="crypto-tab mb-2 py-2 px-3"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal4"
+          >
+            <div class="row">
+              <div class="col text-center">
+                <img src="img/ethereum.png" alt="bitcoin" class="img-fluid" />
               </div>
-              <div class="row mb-2">
-                <div class="col text-center">Ethereum</div>
-                <div class="col text text-muted text-end ethereum-value">$0</div>
-                <div class="col text text-muted text-end ethereum-price"></div>
+              <div class="col text-end ethereum-quantity">0 ETH</div>
+              <div class="col text-end ethereum-change"></div>
+            </div>
+            <div class="row">
+              <div class="col text-center">Ethereum</div>
+              <div class="col text text-muted text-end ethereum-value">$0</div>
+              <div class="col text text-muted text-end ethereum-price"></div>
+            </div>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal4"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog  modal-dialog-centered">
+                <div class="modal-content">
+                  
+                  <div class="modal-body">
+                    Ethereum Chart
+                    <img src="img/ethereum-chart.png" alt="ethereum chart" class="crypto-chart" >
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="crypto-tab py-1 px-1">
-              <div class="row">
-                <div class="col text-center">
-                  <img src="img/tether.png" alt="bitcoin" class="img-fluid" />
-                </div>
-                <div class="col text-end tether-quantity">0 USDT</div>
-                <div class="col text-end tether-change"></div>
+          </div>
+
+          <div
+            class="crypto-tab mb-2 py-2 px-3"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal5"
+          >
+            <div class="row">
+              <div class="col text-center">
+                <img src="img/tether.png" alt="bitcoin" class="img-fluid" />
               </div>
-              <div class="row mb-2">
-                <div class="col text-center">Tether</div>
-                <div class="col text text-muted text-end tether-value">$0</div>
-                <div class="col text text-muted text-end tether-price"></div>
+              <div class="col text-end tether-quantity">0 USDT</div>
+              <div class="col text-end tether-change"></div>
+            </div>
+            <div class="row mb-2">
+              <div class="col text-center">Tether</div>
+              <div class="col text text-muted text-end tether-value">$0</div>
+              <div class="col text text-muted text-end tether-price"></div>
+            </div>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal5"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog  modal-dialog-centered">
+                <div class="modal-content">
+                  
+                  <div class="modal-body">
+                    Tether Chart
+                    <img src="img/tether-chart.png" alt="tether chart" class="crypto-chart" >
+                  </div>
+                </div>
               </div>
             </div>
-          
+          </div>
 
           <!-- <div class="row text-center mb-2 transaction">
             <p>Transaction History</p>
@@ -316,8 +394,20 @@
       <div class="row text-center">
         <div class="col">
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-success buy-button transaction-button" value="buy">BUY</button>
-            <button type="button" class="btn btn-danger sell-button transaction-button" value="sell">SELL</button>
+            <button
+              type="button"
+              class="btn btn-success buy-button transaction-button"
+              value="buy"
+            >
+              BUY
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger sell-button transaction-button"
+              value="sell"
+            >
+              SELL
+            </button>
           </div>
         </div>
       </div>

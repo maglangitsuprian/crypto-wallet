@@ -55,6 +55,7 @@ const cryptoPrices = ()=>{
             usdtChange.html(`${tetherChange.toFixed(2)}%`)
             cryptoValue()
             overallBalance()
+            withdraw()
             profitAndLoss()
         }, 1000)
 }
@@ -65,7 +66,6 @@ const deposit = () => {
     tetherQuantityNum = tetherQuantityNum + parseInt($(".deposit-amount").val()) 
     tetherQuantity.html(`${tetherQuantityNum} USDT`)
     initialCost += parseInt($(".deposit-amount").val())
-    console.log(initialCost)
     $(".deposit-amount").val("")
     })
     
@@ -76,6 +76,7 @@ const withdraw = () => {
     $(".withdraw-crypto").on("click", ()=>{
         if(tetherQuantityNum>=parseInt($(".withdraw-amount").val())){
           tetherQuantityNum = tetherQuantityNum - parseInt($(".withdraw-amount").val()) 
+          
           tetherQuantity.html(`${tetherQuantityNum} USDT`)  
         } else {
             alert("Not enough balance!")
