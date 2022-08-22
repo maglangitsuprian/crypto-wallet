@@ -28,7 +28,7 @@
           <span class="logo"><img src="img/logo.png" alt="logo" /></span>
         </div>
       </div>
-      <div class="row mb-4 balance py-2 px-2">
+      <div class="row mb-3 balance py-2 px-2">
         <div class="col-5">
           <div class="row">
             <div class="col text-muted">Portfolio Balance</div>
@@ -38,7 +38,7 @@
             <div class="col"></div>
           </div>
           <div class="row">
-            <div class="col lead percent">0%</div>
+            <div class="col lead profit-loss"></div>
           </div>
         </div>
         <div class="col">
@@ -95,7 +95,7 @@
                     >
                       Close
                     </button>
-                    <button type="button" class="btn btn-warning deposit-crypto" data-bs-dismiss="modal">
+                    <button type="button" class="btn btn-warning deposit-crypto transaction-button" data-bs-dismiss="modal" value="deposit">
                       Deposit
                     </button>
                   </div>
@@ -153,7 +153,7 @@
                     >
                       Close
                     </button>
-                    <button type="button" class="btn btn-info withdraw-crypto" data-bs-dismiss="modal">Withdraw</button>
+                    <button type="button" class="btn btn-info withdraw-crypto transaction-button" data-bs-dismiss="modal" value="withdraw">Withdraw</button>
                   </div>
                 </div>
               </div>
@@ -199,33 +199,18 @@
                           <th scope="col">Cost</th>
                           <th scope="col">Quantity</th>
                           <th scope="col">Price</th>
-                          <th scope="col">PnL</th>
+                          
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
+                      <tbody class="transaction-body">
+                        <!-- <tr>
+                          <td>1</td>
                           <td>Mark</td>
                           <td>Otto</td>
                           <td>@mdo</td>
                           <td>Otto</td>
                           <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td colspan="2">Larry the Bird</td>
-                          <td>@twitter</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
+                        </tr> -->
                       </tbody>
                     </table>
                   </div>
@@ -243,8 +228,8 @@
             <div class="col text-muted">COIN PRICE</div>
           </div>
 
-          <div id="cryptoList">
-            <div id="bitcoin">
+          
+            <div class="crypto-tab py-1 px-1">
               <div class="row">
                 <div class="col text-center">
                   <img src="img/bitcoin.png" alt="bitcoin" class="img-fluid" />
@@ -258,7 +243,7 @@
                 <div class="col text text-muted text-end bitcoin-price"></div>
               </div>
             </div>
-            <div id="bitcoin">
+            <div  class="crypto-tab py-1 px-1">
               <div class="row">
                 <div class="col text-center">
                   <img src="img/ethereum.png" alt="bitcoin" class="img-fluid" />
@@ -272,7 +257,7 @@
                 <div class="col text text-muted text-end ethereum-price"></div>
               </div>
             </div>
-            <div id="bitcoin">
+            <div class="crypto-tab py-1 px-1">
               <div class="row">
                 <div class="col text-center">
                   <img src="img/tether.png" alt="bitcoin" class="img-fluid" />
@@ -286,7 +271,7 @@
                 <div class="col text text-muted text-end tether-price"></div>
               </div>
             </div>
-          </div>
+          
 
           <!-- <div class="row text-center mb-2 transaction">
             <p>Transaction History</p>
@@ -310,7 +295,7 @@
             class="form-control text-center"
             type="text"
             placeholder="Enter Amount in USDT"
-            id="amount"
+            id="buy-sell-input"
           />
 
           <!-- <select id="cryptoMarket"></select> -->
@@ -331,8 +316,8 @@
       <div class="row text-center">
         <div class="col">
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-success buy-button">BUY</button>
-            <button type="button" class="btn btn-danger sell-button">SELL</button>
+            <button type="button" class="btn btn-success buy-button transaction-button" value="buy">BUY</button>
+            <button type="button" class="btn btn-danger sell-button transaction-button" value="sell">SELL</button>
           </div>
         </div>
       </div>

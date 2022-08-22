@@ -21,6 +21,7 @@ let bitcoinValue = $(".bitcoin-value")
 let ethereumValue = $(".ethereum-value")
 let tetherValue = $(".tether-value")
 
+let initialCost = 0
 
 const main = ()=> {
     
@@ -29,6 +30,8 @@ const main = ()=> {
     sell()
     buy()
     cryptoPrices()
+    
+    
 }
 
 
@@ -52,6 +55,7 @@ const cryptoPrices = ()=>{
             usdtChange.html(`${tetherChange.toFixed(2)}%`)
             cryptoValue()
             overallBalance()
+            profitAndLoss()
         }, 1000)
 }
 
@@ -60,6 +64,8 @@ const deposit = () => {
     $(".deposit-crypto").on("click", ()=>{
     tetherQuantityNum = tetherQuantityNum + parseInt($(".deposit-amount").val()) 
     tetherQuantity.html(`${tetherQuantityNum} USDT`)
+    initialCost += parseInt($(".deposit-amount").val())
+    console.log(initialCost)
     $(".deposit-amount").val("")
     })
     
@@ -81,7 +87,7 @@ const withdraw = () => {
 
 const buy = ()=> {
     $(".buy-button").on("click", ()=>{
-     let value = parseInt($("#amount").val())
+     let value = parseInt($("#buy-sell-input").val())
      let selectedCoin = $("select").val()
 
      if(currentBalance>=value  && tetherQuantityNum>=value){
@@ -101,13 +107,13 @@ const buy = ()=> {
         }
      } else {
         alert("Sorry, Not enough balance! Please deposit USDT.")
-     } $("#amount").val("")})
+     } $("#buy-sell-input").val("")})
 }
 
 
 const sell = ()=> {
     $(".sell-button").on("click", ()=>{
-     let value = parseInt($("#amount").val())
+     let value = parseInt($("#buy-sell-input").val())
      let selectedCoin = $("select").val()
     if((parseInt(bitcoinValue.html().slice(1))>=value) || (parseInt(ethereumValue.html().slice(1))>=value)){
         if(selectedCoin === "bitcoin"){
@@ -124,7 +130,7 @@ const sell = ()=> {
     } else {
         alert("Not enough balance!")
     }
-    $("#amount").val("")})
+    $("#buy-sell-input").val("")})
 }
 
 
@@ -141,4 +147,46 @@ const overallBalance = ()=>{
 }
 
 
+const transactionHistory = ()=>{
+    $(".transaction-button").on("click", (e)=>{
+        const transactionBody = $(".transaction-body")
+        const type = e.target.value
+        const selectedCrypto = $("select").val()
+        const cost = parseInt($("#buy-sell-input").val()) 
+        let btcQuantity = cost / parseInt(bitcoin.html().slice(1))
+        let ethQuantity = cost / parseInt(ethereum.html().slice(1))
+        const addTransaction = `
+        <tr>
+         <td>${type.toUpperCase()}</td>
+         <td><img src="img/${selectedCrypto}.png" alt="logo" /></td>
+         <td>$${cost}</td>
+         <td>${btcQuantity.toFixed(5)}</td>
+         <td>${bitcoin.html()}</td>
+        </tr>`
+        const addTransaction1 = `
+        <tr>
+         <td>${type.toUpperCase()}</td>
+         <td><img src="img/${selectedCrypto}.png" alt="logo" /></td>
+         <td>$${cost}</td>
+         <td>${ethQuantity.toFixed(5)}</td>
+         <td>${ethereum.html()}</td>
+        </tr>`
+
+       if(selectedCrypto === "bitcoin"){
+        transactionBody.append(addTransaction)
+       } else if (selectedCrypto==="ethereum"){
+        transactionBody.append(addTransaction1)
+       }
+    
+    })
+}
+
+
+const profitAndLoss = () =>{
+    let result = (currentBalance - initialCost).toString().charAt(0) !== "-" ? `+${currentBalance - initialCost}`:`${currentBalance - initialCost}`;
+    $(".profit-loss").html(`${result}`)
+}
+
+
+transactionHistory()
 main()
