@@ -76,7 +76,7 @@ const deposit = () => {
 const withdraw = () => {
     $(".withdraw-crypto").on("click", ()=>{
         if(tetherQuantityNum>=parseInt($(".withdraw-amount").val())){
-          tetherQuantityNum = tetherQuantityNum - parseInt($(".withdraw-amount").val()) 
+          tetherQuantityNum = tetherQuantityNum - parseInt($(".withdraw-amount").val())
           tetherQuantity.html(`${tetherQuantityNum} USDT`)
         } else {
             alert("Not enough balance!")
@@ -184,8 +184,8 @@ const transactionHistory = ()=>{
 
 
 const profitAndLoss = () =>{
-    let result = (currentBalance - initialCost).toString().charAt(0) !== "-" ? `+${currentBalance - initialCost}`:`${currentBalance - initialCost}`;
-    $(".profit-loss").html(`${result}`)
+    let result = (currentBalance - initialCost).toString().charAt(0) !== "-" && (currentBalance - initialCost).toString().charAt(0) !== "0" ? `+${currentBalance - initialCost}`:`${currentBalance - initialCost}`;
+    $(".profit-loss").html(`PnL: ${result}`)   
 }
 
 
