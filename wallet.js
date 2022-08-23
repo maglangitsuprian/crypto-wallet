@@ -77,6 +77,7 @@ const withdraw = () => {
     $(".withdraw-crypto").on("click", ()=>{
         if(tetherQuantityNum>=parseInt($(".withdraw-amount").val())){
           tetherQuantityNum = tetherQuantityNum - parseInt($(".withdraw-amount").val())
+          currentBalance+= parseInt($(".withdraw-amount").val())
           tetherQuantity.html(`${tetherQuantityNum} USDT`)
         } else {
             alert("Not enough balance!")
@@ -161,7 +162,7 @@ const transactionHistory = ()=>{
          <td style="${type==='buy'? 'color:green' : 'color:red'}">${type.toUpperCase()}</td>
          <td><img src="img/${selectedCrypto}.png" alt="logo" /></td>
          <td>$${cost}</td>
-         <td>${btcQuantity.toFixed(5)}</td>
+         <td>${btcQuantity.toFixed(5)} BTC</td>
          <td>${bitcoin.html()}</td>
         </tr>`
         const addTransaction1 = `
@@ -169,7 +170,7 @@ const transactionHistory = ()=>{
         <td style="${type==='buy'? 'color:green' : 'color:red'}">${type.toUpperCase()}</td>
          <td><img src="img/${selectedCrypto}.png" alt="logo" /></td>
          <td>$${cost}</td>
-         <td>${ethQuantity.toFixed(5)}</td>
+         <td>${ethQuantity.toFixed(5)} ETH</td>
          <td>${ethereum.html()}</td>
         </tr>`
 
@@ -185,19 +186,17 @@ const transactionHistory = ()=>{
 
 const profitAndLoss = () =>{
     let result = (currentBalance - initialCost).toString().charAt(0) !== "-" && (currentBalance - initialCost).toString().charAt(0) !== "0" ? `+${currentBalance - initialCost}`:`${currentBalance - initialCost}`;
-    $(".profit-loss").html(`PnL: ${result}`)   
+    $(".profit-loss").html(`PnL: ${result} USDT`)   
 }
 
 
 const greenRed = ()=> {
     for (let percentIndex = 0; percentIndex < $(".change").length; percentIndex++) {
-        if(($(".change")[percentIndex]).innerText.charAt(0) === "+"){
-            ($(".change")[percentIndex]).style.color = "green"
-        } else if(($(".change")[percentIndex]).innerText.charAt(0) === "-") {
-        ($(".change")[percentIndex]).style.color = "red"  
+        if(($(".change")[percentIndex]).innerText.charAt(0) === "-") {
+            ($(".change")[percentIndex]).style.color = "red"  
         } else {
-            ($(".change")[percentIndex]).style.color = "black"
-        }  
+             ($(".change")[percentIndex]).style.color = "green"   
+            }
     }
     
 }
